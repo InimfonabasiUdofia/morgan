@@ -1,0 +1,19 @@
+
+@media (max-width: 768px) {
+    .arrow_left{
+        display: none;
+    }
+    .arrow_right{
+        display: none;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .arrow_left2{
+        display: none;
+    }
+    .arrow_right2{
+        display: none;
+    }
+}

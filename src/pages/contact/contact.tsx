@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Navbar } from "../components/nav/navbar";
-import { Footer } from "../components/footer/footer";
+import { Navbar } from "../../components/nav/navbar";
+import { Footer } from "../../components/footer/footer";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({

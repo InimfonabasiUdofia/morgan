@@ -2,14 +2,23 @@ import { Footer } from "../../components/footer/footer";
 import { Navbar } from "../../components/nav/navbar";
 import { useState } from "react";
 import styles from "./style.module.css";
+import Testinomialhome from "../../components/repitition/testinomialhome";
+import Gallary from "../../components/repitition/gallary";
+
+
 
 export const Home = () => {
+  const imgconnect:String="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
   const images = [
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80", // Mountain landscape
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80", // Beach sunset
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80", 
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80", 
     "https://picsum.photos/id/1018/1920/1080",
   ];
-  const selected = [
+   type items={
+    image:string;
+    height:string;
+ }
+  const selected:items[] = [
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
@@ -18,28 +27,39 @@ export const Home = () => {
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: "h-[350px]",
+      height: "h-[650px]",
     },
-    { image: "https://picsum.photos/id/1018/1920/1080", height: "h-[250px]" },
+    { image: "https://picsum.photos/id/1018/1920/1080", height: "h-[550px]" },
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: "h-[290px]",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: "h-[360px]",
+      height: "h-[790px]",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: "h-[290px]",
+      height: "h-[260px]",
     },
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: "h-[360px]",
+      height: "h-[590px]",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
+      height: "h-[160px]",
+    },
+    { image: "https://picsum.photos/id/1018/1920/1080", height: "h-[260px]" },
+     {
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
+      height: "h-[590px]",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
+      height: "h-[160px]",
     },
     { image: "https://picsum.photos/id/1018/1920/1080", height: "h-[260px]" },
   ];
@@ -254,34 +274,10 @@ export const Home = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className=" py-20">
-        <div className="lg:px-30 px-6">
-          <h3 className="text-center text-xl font-semibold mb-12 tracking-widest">
+           <h3 className="text-center text-xl font-semibold mb-12 tracking-widest">
             SELECTED WORKS
           </h3>
-          <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-            {selected.map((image, index) => (
-              <div
-                key={index}
-                className="break-inside-avoid mb-4 group cursor-pointer"
-              >
-                <div className="relative overflow-hidden  shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
-                  <img
-                    src={image.image}
-                    alt={`Gallery image ${index + 1}`}
-                    className={`w-full ${image.height} object-cover transition-transform duration-300 group-hover:brightness-110`}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center mt-12">
-            <button className="px-8 py-3 bg-black text-white text-sm uppercase tracking-widest rounded-lg shadow-md hover:bg-gray-800 transition">
-              View Portfolio
-            </button>
-          </div>
-        </div>
-      </section>
+     <Gallary selected={selected} buttonview="VIEW PORTFOLIO" link="./"></Gallary>
       <section className=" py-16 ">
         <div className="max-w-6xl mx-auto px-6 bg-[#f9f9f4] py-10">
           <div className="flex justify-between ">
@@ -385,35 +381,7 @@ export const Home = () => {
           </div>
         </div>
       </section>
-      <section
-        className="relative h-[100vh] flex bg-cover bg-center  items-center  lg:px-20 px-5"
-        style={{
-          backgroundImage: "url('https://picsum.photos/id/1018/1920/1080')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="relative z-10  text-white ">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6">
-            LET'S CONNECT
-          </h2>
-        </div>
-      </section>
-      <section>
-        <div className="lg:flex relative justify-between bottom-40 px-5 lg:px-20">
-          <div className="">
-            <p className="mb-6 text-white">
-              I look forward to hearing from you and helping you create memories
-              that will last a lifetime.
-            </p>
-          </div>
-          <div className="">
-            <button className="px-8 py-3 bg-black text-white uppercase tracking-widest  shadow-md hover:bg-gray-800 transition">
-              Get In Touch
-            </button>
-          </div>
-          <div className=""></div>
-        </div>
-      </section>
+     <Testinomialhome img={imgconnect}></Testinomialhome>
       <Footer></Footer>
     </>
   );

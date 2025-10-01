@@ -7,8 +7,10 @@ import {
 import { Home } from "./pages/home/Home";
 import { About } from "./pages/about/about";
 import Blog from "./pages/blog/blog";
-import Contact from "./pages/contact";
+import Contact from "./pages/contact/contact";
 import Testinomial from "./pages/testinomial/testionial";
+import Service from "./pages/service/service";
+import Potfolio1 from "./pages/gallary/potfolio1";
 
 
 
@@ -34,6 +36,14 @@ function App() {
       {
       path: "/testionomial",
       element: <><Testinomial></Testinomial></>,
+    },
+    {
+      path: "/service",
+      element: <><Service></Service></>,
+    },
+       {
+      path: "/potfolio1",
+      element: <><Potfolio1></Potfolio1></>,
     }
   
   ]);

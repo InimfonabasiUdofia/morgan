@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { X } from "lucide-react";
 
 export const Navbar = ({ navcolor }: any) => {
@@ -150,9 +150,9 @@ export const Navbar = ({ navcolor }: any) => {
           }`}
         >
           {navbutton.map((item, i) => (
-            <a
+            <NavLink
               key={i}
-              href={item.link}
+              to={item.link}
               className={`text-white text-xl  hover:text-gray-400 font-[Montserrat] transition-all duration-300 transform hover:scale-110 ${
                 isOpen ? "animate-fadeInUp" : ""
               }`}
@@ -160,7 +160,7 @@ export const Navbar = ({ navcolor }: any) => {
               onClick={() => setIsOpen(false)}
             >
               {item.name}
-            </a>
+            </NavLink>
           ))}
         </div>
       </div>

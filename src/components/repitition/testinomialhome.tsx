@@ -15,7 +15,7 @@ const Testinomialhome: React.FC<TestimonialHomeProps> = ({ img }) => {
       >
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10  text-white ">
-          <p className="text-[40px]  font-[Montserrat] mb-6">
+          <p className="text-[45px] font-extralight font-[Montserrat] mb-6">
             LET'S CONNECT
           </p>
         </div>
@@ -23,9 +23,8 @@ const Testinomialhome: React.FC<TestimonialHomeProps> = ({ img }) => {
       <section>
         <div className="lg:flex relative justify-between bottom-40 lg:px-35 px-5">
           <div className="">
-            <p className="mb-6 text-white lg:w-3/5 font-[Montserrat] ">
-              I look forward to hearing from you and helping you create memories
-              that will last a lifetime.
+            <p className="mb-6 text-white lg:w-3/5 font-[Montserrat] font-extralight">
+            I LOOK FORWARD TO HEARING FROM YOU AND HELPING YOU CREATE MEMORIES THAT WILL LAST A LIFETIME.
             </p>
           </div>
           <div className="relative lg:left-30">

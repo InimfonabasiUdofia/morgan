@@ -15,54 +15,55 @@ export const Home = () => {
   ];
   type items = {
     image: string;
-    height: number;
+    height: string;
+    smheight: string;
   };
   const selected: items[] = [
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: 310,
+      height: "lg:h-[310px]",smheight:"h-[210px]"
     },
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: 580,
+      height: "lg:h-[580px]",smheight:"h-[340px]"
     },
-    { image: "https://picsum.photos/id/1018/1920/1080", height: 550 },
+    { image: "https://picsum.photos/id/1018/1920/1080", height: "lg:h-[550px]", smheight:"h-[300px]"},
 
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: 260,
+      height: "lg:h-[260px]",smheight:"h-[160px]"
     },
 
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: 250,
+      height: "lg:h-[250px]",smheight:"h-[150px]"
     },
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: 590,
+      height: "lg:h-[590px]",smheight:"h-[300px]"
     },
-    { image: "https://picsum.photos/id/1018/1920/1080", height: 300 },
+    { image: "https://picsum.photos/id/1018/1920/1080", height: "lg:h-[300px]" ,smheight:"h-[200px]"},
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: 550,
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: 600,
+      height: "lg:h-[550px]",smheight:"h-[280px]"
     },
     {
       image:
         "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
-      height: 230,
+      height: "lg:h-[600px]",smheight:"h-[370px]"
     },
-    { image: "https://picsum.photos/id/1018/1920/1080", height: 290 },
+    {
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80",
+      height: "lg:h-[230px]",smheight:"h-[150px]"
+    },
+    { image: "https://picsum.photos/id/1018/1920/1080", height: "lg:h-[590px]", smheight:"h-[350px]"},
   ];
   const testimonials = [
     {
@@ -149,7 +150,7 @@ export const Home = () => {
             <div className=" flex justify-between cursor-pointer">
               {/* Left Arrow */}
               <svg
-                className={`${styles.arrow_left2} cursor-pointer relative   top-70`}
+                className={`${styles.arrow_left2} cursor-pointer relative   top-65 `}
                 onClick={() => {
                   setIndex((prev) => (prev + 1) % images.length);
                 }}
@@ -182,7 +183,7 @@ export const Home = () => {
                 onClick={() => {
                   setIndex((prev) => (prev + 1) % images.length);
                 }}
-                className={`${styles.arrow_right2} cursor-pointer relative  top-70`}
+                className={`${styles.arrow_right2} cursor-pointer relative  top-65`}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 100 100"
                 width="70"
@@ -301,7 +302,7 @@ export const Home = () => {
             </div>
             <div className="flex">
               <svg
-                className={``}
+                className={`${styles.arrow_right} cursor-pointer`}
                 onClick={() => {
                   setTestimonial((prev) => (prev + 1) % testimonials.length);
                 }}
@@ -329,7 +330,7 @@ export const Home = () => {
                 </g>
               </svg>
               <svg
-                className={``}
+                className={`${styles.arrow_right} cursor-pointer`}
                 onClick={() => {
                   setTestimonial(
                     (prev) =>
@@ -390,6 +391,67 @@ export const Home = () => {
               <p className=" text-gray-900 text-xl font-[Montserrat] pt-3">
                 {testimonials[(Testimonials + 2) % testimonials.length].author}
               </p>
+            </div>
+            <div className="flex justify-between">
+              <svg
+                className={`${styles.arrow_right2} cursor-pointer`}
+                onClick={() => {
+                  setTestimonial((prev) => (prev + 1) % testimonials.length);
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="50"
+                height="50"
+                role="img"
+                aria-label="Slim white arrow rotated"
+              >
+                <g
+                  fill="none"
+                  stroke="#000000"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="miter"
+                  transform="rotate(180 50 50)"
+                >
+                  <line x1="10" y1="50" x2="50" y2="50" />
+
+                  <line x1="50" y1="50" x2="65" y2="50" />
+
+                  <line x1="65" y1="50" x2="55" y2="44" />
+                  <line x1="65" y1="50" x2="55" y2="56" />
+                </g>
+              </svg>
+              <svg
+                className={`${styles.arrow_right2} cursor-pointer`}
+                onClick={() => {
+                  setTestimonial(
+                    (prev) =>
+                      (prev - 1 + testimonials.length) % testimonials.length
+                  );
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="50"
+                height="50"
+                role="img"
+                aria-label="Slim white arrow rotated"
+              >
+                <g
+                  fill="none"
+                  stroke="#000000"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="miter"
+                  transform="rotate(0 50 50)"
+                >
+                  <line x1="10" y1="50" x2="50" y2="50" />
+
+                  <line x1="50" y1="50" x2="65" y2="50" />
+
+                  <line x1="65" y1="50" x2="55" y2="44" />
+                  <line x1="65" y1="50" x2="55" y2="56" />
+                </g>
+              </svg>
             </div>
           </div>
         </div>

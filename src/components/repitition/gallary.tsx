@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
  
  type items={
     image:string;
-    height:number;
+    height:string;
+    smheight:string;
  }
  type ItemsProps = {
   selected: items[];
@@ -27,11 +28,11 @@ const Gallary = ({selected ,buttonview,link}:ItemsProps) => {
                   <img
                     src={image.image}
                     alt={`Gallery image ${index + 1}`}
-                    className="w-full object-cover transition-transform duration-300 group-hover:brightness-110"
-  style={{
-    height: image.height > 500 ? `${image.height - 100}px` : `${image.height}px`,
-  }}
-                  />
+                    className={`w-full object-cover transition-transform duration-300 group-hover:brightness-110 ${image.height} ${image.smheight}`}
+                    // style={{
+                    //   height: image.height > 500 ? `${image.height-200 }px` : `${image.height}px`,
+                    // }}
+                                    />
                 </div>
               </div>
             ))}

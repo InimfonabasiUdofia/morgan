@@ -57,6 +57,13 @@ const testimonials: Testimonial[] = [
     img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80", 
     height:'h-[250px]',// Example placeholder
   },
+   {
+    id: 6,
+    text: "Working with Morgan was one of the best decisions for our wedding. His warm and personable approach made us feel comfortable and at ease. The photos are stunning! We can’t thank Morgan enough for his incredible work and for making our day unforgettable.",
+    author: "LUCAS + DANIELLE",
+    img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80", 
+    height:'h-[250px]',// Example placeholder
+  },
 ];
  const imgconnect:String="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
 
@@ -86,13 +93,13 @@ const Testinomial = () => {
       </div>
 
      
-      <div className="  mt-16 grid grid-cols-1 md:grid-cols-2  items-center px-6 lg:px-20">
-        {testimonials.slice(3,5).map((item)=>{
+      <div className="   grid grid-cols-1 md:grid-cols-2  items-center px-6 lg:px-20">
+        {testimonials.slice(3,6).map((item)=>{
           return(<>
            {item.img && (
-          <div className="">
+          <div className="pt-10">
                <span className="">
-            <p className="text-gray-400 text-[17px]  font-[Montserrat] relative lg:top-20 ">0{item.id}</p>
+            <p className="text-gray-400 text-[17px]  font-[Montserrat] relative lg:top-20 pt-10 ">0{item.id}</p>
           </span>
           <span className="justify-center flex lg:mx-20">
             <img
@@ -104,9 +111,9 @@ const Testinomial = () => {
          
           </div>
         )}
-        <div>
+        <div className="item-center">
         
-           <p className="text-gray-700 text-sm leading-relaxed mb-6 font-[lora] pt-5">
+           <p className="text-gray-700 text-sm leading-relaxed mb-6 font-[lora] mt-10 lg:mt-30">
             “{item.text}”
           </p>
            <p className=" text-gray-900 text-xl font-[Montserrat] pt-3">

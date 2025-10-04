@@ -1,7 +1,7 @@
 import { Navbar } from "../../components/nav/navbar";
 import { Footer } from "../../components/footer/footer";
 import Aboutconnect from "./aboutconnect";
-import styles from "./style.module.css"
+import styles from "./style.module.css";
 
 export const About = () => {
   const navcolor = "text-black";
@@ -15,36 +15,34 @@ export const About = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center ">
           {/* Left - Image */}
 
-  
-           <div className=" relative bottom-60 w-full h-full ">
-           <div className={`${styles.big} px-20`}>
+          <div className=" relative bottom-60 w-full h-full ">
+            <div className={`${styles.big} px-20`}>
               <h2 className="text-2xl md:text-3xl font-[Montserrat] font-light text-gray-900 mb-2">
-              HI, I AM MORGAN WELLS
-            </h2>
-            <p className="uppercase font-[Montserrat]  text-gray-500 text-sm mb-8 ">
-              Let’s get to know each other
-            </p>
-          </div>
-        <div className=" flex justify-center">
+                HI, I AM MORGAN WELLS
+              </h2>
+              <p className="uppercase font-[Montserrat]  text-gray-500 text-sm mb-8 ">
+                Let’s get to know each other
+              </p>
+            </div>
+            <div className=" flex justify-center">
               <img
-              src="https://picsum.photos/id/1018/1920/1080"
-              alt="Morgan Wells"
-              className="object-cover lg:h-[500px] h-[400px] w-1/2"
-            />
-        </div>
- 
+                src="https://picsum.photos/id/1018/1920/1080"
+                alt="Morgan Wells"
+                className="object-cover lg:h-[500px] h-[330px] w-1/2"
+              />
+            </div>
           </div>
 
           {/* Right - Text */}
           <div className="px-8 relative bottom-60">
-          <div className={`${styles.small}`}>
+            <div className={`${styles.small}`}>
               <h2 className="text-2xl md:text-3xl font-[Montserrat] font-light text-gray-900 mb-2">
-              HI, I AM MORGAN WELLS
-            </h2>
-            <p className="uppercase font-[Montserrat]  text-gray-500 text-sm mb-8 ">
-              Let’s get to know each other
-            </p>
-          </div>
+                HI, I AM MORGAN WELLS
+              </h2>
+              <p className="uppercase font-[Montserrat]  text-gray-500 text-sm mb-8 ">
+                Let’s get to know each other
+              </p>
+            </div>
 
             <p className="text-gray-700 text-base leading-relaxed lg:pt-35 font-[lora]">
               I'm a wedding and portrait photographer based in Portland, Oregon.
@@ -61,7 +59,7 @@ export const About = () => {
       </section>
       <section>
         {/* Quote Section */}
-        <div className="relative w-full h-[80vh] bg-black">
+        <div className="relative w-full h-[80vh] bottom-25 bg-black">
           <img
             src="https://picsum.photos/id/1018/1920/1080" // replace with your image path
             alt="Inspiration"
@@ -80,7 +78,7 @@ export const About = () => {
         </div>
 
         {/* As Seen In Section */}
-        <div className=" py-16">
+        <div className="pb-16 ">
           <div className="lg:px-30 px-5  ">
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-y-4 text-sm text-gray-700 bg-[#f9f9f4] lg:px-10 lg:py-20 px-5 py-10">
               <div className="">
@@ -90,19 +88,35 @@ export const About = () => {
               </div>
               <div className=""></div>
               <div className="">
-                <p className=" text-[17px] font-[lora] text-black">Elle Magazine</p>
-                <p className="pt-4 text-[15px] font-[lora] text-black">Style Me Pretty</p>
-                <p className="pt-4 text-[15px] font-[lora] text-black">Louis Vuitton</p>
+                <p className=" text-[17px] font-[lora] text-black">
+                  Elle Magazine
+                </p>
+                <p className="pt-4 text-[15px] font-[lora] text-black">
+                  Style Me Pretty
+                </p>
+                <p className="pt-4 text-[15px] font-[lora] text-black">
+                  Louis Vuitton
+                </p>
               </div>
               <div className="">
                 <p className=" text-[15px] font-[lora]l text-black">Vogue</p>
-                <p className="pt-4 text-[15px] font-[lora] text-black">The Knot</p>
-                <p className="pt-4 text-[15px] font-[lora] text-black">Martha Stewart</p>
+                <p className="pt-4 text-[15px] font-[lora] text-black">
+                  The Knot
+                </p>
+                <p className="pt-4 text-[15px] font-[lora] text-black">
+                  Martha Stewart
+                </p>
               </div>
               <div className="">
-                <p className=" text-[15px] font-[lora] text-black">Harper Bazaar Bride</p>
-                <p className="pt-4 text-[15px] font-[lora] text-black">Elle Magazine</p>
-                <p className="pt-4 text-[15px] font-[lora] text-black">Martha Stewart</p>
+                <p className=" text-[15px] font-[lora] text-black">
+                  Harper Bazaar Bride
+                </p>
+                <p className="pt-4 text-[15px] font-[lora] text-black">
+                  Elle Magazine
+                </p>
+                <p className="pt-4 text-[15px] font-[lora] text-black">
+                  Martha Stewart
+                </p>
               </div>
             </div>
           </div>
@@ -114,14 +128,16 @@ export const About = () => {
           <img
             src="https://picsum.photos/id/1018/1920/1080"
             alt="Wedding moment"
-            className="lg:w-1/2 w-full lg:h-[300px] h-[230px]    shadow-md"
+            className="lg:w-1/2 w-full lg:h-[300px] h-[230px]   object-cover shadow-md"
           />
         </div>
 
         {/* Center Image with Overlay */}
-     <div className={`relative flex-shrink-0 order-3 md:order-2 lg:order-2 h-[700px] ${styles.small}`}>
-         <Aboutconnect height="h-[700px]"></Aboutconnect>
-     </div>
+        <div
+          className={`relative flex-shrink-0 order-3 md:order-2 lg:order-2 h-[700px] ${styles.small}`}
+        >
+          <Aboutconnect height="h-[700px]"></Aboutconnect>
+        </div>
         {/* Right Image */}
         <div className="lg:flex lg:justify-center lg:mt-95 order-2 md:order-3 lg:order-3">
           <img
@@ -132,10 +148,8 @@ export const About = () => {
         </div>
       </section>
       <div className={`relative  h-[500px] mx-5  ${styles.big}`}>
-         <Aboutconnect height="h-[500px] "></Aboutconnect>
+        <Aboutconnect height="h-[500px] "></Aboutconnect>
       </div>
-      
-      
 
       <Footer></Footer>
     </>

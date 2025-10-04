@@ -9,7 +9,7 @@ const Aboutconnect = ({height}:any) => {
             alt="Bride back view"
             className={`w-full ${height} object-cover  shadow-lg`}
           />
-          <div className="absolute top-70 lg:top-115  text-center  text-white  bg-opacity-30   ">
+          <div className="absolute top-65 lg:top-115  text-center  text-white  bg-opacity-30   ">
             <div className="">
             <h2 className="text-2xl md:text-3xl font-[Montserrat] mb-4">
               LET'S CONNECT

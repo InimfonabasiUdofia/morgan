@@ -237,7 +237,7 @@ export const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className=" px-6 lg:px-30 grid md:grid-cols-2  lg:grid-cols-2 gap-12 my-20">
+      <section className=" px-5 lg:px-30 grid md:grid-cols-2  lg:grid-cols-2 gap-12 my-20">
         <div className={`${styles.arrow_right2}`}>
           <p className=" font-[Montserrat] font-[10px] text-[black] ">
             MY PHILOSOPHY
@@ -246,16 +246,16 @@ export const Home = () => {
             LASTING MEMORIES THROUGH BREATHTAKING, SOULFUL IMAGERY
           </h2>
         </div>
-        <div className="flex gap-8 lg:gap-20 lg:justify-end">
+        <div className="flex gap-7 lg:gap-20 lg:justify-end">
           <img
             src="https://picsum.photos/id/1018/1920/1080"
             alt="detail"
-            className="w-1/3 lg:h-[380px] h-[300px]  object-cover mt-15 "
+            className="w-[40%] lg:h-[380px] h-[300px]  object-cover mt-15 "
           />
           <img
             src="https://picsum.photos/id/1018/1920/1080"
             alt="bride"
-            className="w-1/2 lg:h-[500px] h-[400px] object-cover"
+            className="w-[50%] lg:h-[500px] h-[400px] object-cover"
           />
         </div>
         <div className="lg:px-22">
@@ -368,7 +368,7 @@ export const Home = () => {
               <p className="text-gray-700 text-sm leading-relaxed mb-6 font-[lora]">
                 {testimonials[Testimonials].text}
               </p>
-              <p className=" text-gray-900 text-xl font-[Montserrat] pt-3">
+              <p className=" text-gray-900 text-lg font-[Montserrat] pt-3">
                 {testimonials[Testimonials].author}
               </p>
             </div>
@@ -378,7 +378,7 @@ export const Home = () => {
               <p className="text-gray-700 text-sm leading-relaxed mb-6 font-[lora]">
                 {testimonials[(Testimonials + 1) % testimonials.length].text}
               </p>
-              <p className=" text-gray-900 text-xl font-[Montserrat] pt-3">
+              <p className=" text-gray-900 text-lg font-[Montserrat] pt-3">
                 {testimonials[(Testimonials + 1) % testimonials.length].author}
               </p>
             </div>
@@ -388,7 +388,7 @@ export const Home = () => {
               <p className="text-gray-700 text-sm leading-relaxed mb-6 font-[lora]">
                 {testimonials[(Testimonials + 2) % testimonials.length].text}
               </p>
-              <p className=" text-gray-900 text-xl font-[Montserrat] pt-3">
+              <p className=" text-gray-900 text-lg font-[Montserrat] pt-3">
                 {testimonials[(Testimonials + 2) % testimonials.length].author}
               </p>
             </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { X } from "lucide-react";
 
 export const Navbar = ({ navcolor }: any) => {
@@ -7,19 +7,16 @@ export const Navbar = ({ navcolor }: any) => {
   const navbutton = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
-    { name: "Portfolio", link: "/portfolio" },
-    { name: "Services", link: "/services" },
-
+    { name: "Portfolio", link: "" },
     { name: "Blog", link: "/blog" },
+    { name: "info", link: "" },
     { name: "Contact", link: "/contact" },
   ];
   const [isOpen2, setIsOpen2] = useState(false);
- 
-  const options = ["Gallary1", "Gallary2", "Gallary3"];
+  const [isOpen3, setIsOpen3] = useState(false);
 
-  const handleSelect = (_option:string) => {
-    setIsOpen(false);
-  };
+  const options = ["Gallary1", "Gallary2"];
+  const options2 = ["service", "testionomial"];
 
   return (
     <>
@@ -40,14 +37,14 @@ export const Navbar = ({ navcolor }: any) => {
           >
             {navbutton[1].name}
           </Link>
-        
+
           <div className="relative">
             {/* Dropdown Button */}
             <button
               onClick={() => setIsOpen2(!isOpen2)}
               className="font-[Montserrat] flex "
             >
-              <span className="font-medium">Portfolio </span>
+              <span className="">Portfolio </span>
               <X
                 className={`w-3 h-3 transition-transform duration-300 mt-[6px] ml-1  ${
                   isOpen2 ? "rotate-0" : "rotate-45"
@@ -62,13 +59,14 @@ export const Navbar = ({ navcolor }: any) => {
               }`}
             >
               {options.map((option, index) => (
-                <div
+                <Link
                   key={index}
-                  onClick={() => handleSelect(option)}
-                  className="px-4 py-2 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                  to={`/${option}`}
+                  onClick={() => setIsOpen2(false)}
+                  className="block px-4 py-2 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors duration-200 border-b border-gray-100 last:border-b-0"
                 >
                   {option}
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -81,26 +79,64 @@ export const Navbar = ({ navcolor }: any) => {
           </div>
         </div>
         <div className="lg:hidden"></div>
-        
+
         {/* Logo */}
-        <div className={`font-[Montserrat] text-xl lg:text-2xl ${isOpen &&"text-white"} `}>MORGAN</div>
+        <div
+          className={`font-[Montserrat] text-xl lg:text-2xl ${
+            isOpen && "text-white"
+          } `}
+        >
+          MORGAN
+        </div>
 
         {/* Right Links - Desktop */}
         <div className="hidden md:flex space-x-6 lg:space-x-8">
-         
-            <Link
+          <Link
             className="font-[Montserrat] px-2  text-sm lg:text-base"
             to={navbutton[3].link}
           >
             {navbutton[3].name}
           </Link>
+          <div className="relative">
+            {/* Dropdown Button */}
+            <button
+              onClick={() => setIsOpen3(!isOpen3)}
+              className="font-[Montserrat] flex "
+            >
+              <span className="">Info </span>
+              <X
+                className={`w-3 h-3 transition-transform duration-300 mt-[6px] ml-1  ${
+                  isOpen3 ? "rotate-0" : "rotate-45"
+                }`}
+              />
+            </button>
+            <div
+              className={`absolute text-black top-full left-0 mt-1 bg-white shadow-xl w-[150px] overflow-hidden transition-all duration-300 origin-top ${
+                isOpen3
+                  ? "opacity-100 visible scale-y-100"
+                  : "opacity-0 invisible scale-y-95"
+              }`}
+            >
+              {options2.map((option, index) => (
+                <Link
+                  key={index}
+                  to={`/${option}`}
+                  onClick={() => setIsOpen2(false)}
+                  className="block px-4 py-2 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                >
+                  {option}
+                </Link>
+              ))}
+            </div>
+
+            {isOpen3 && (
+              <div
+                onClick={() => setIsOpen2(false)}
+                className="fixed inset-0 -z-10"
+              />
+            )}
+          </div>
           <Link
-            className=" font-[Montserrat] px-2 text-sm lg:text-base"
-            to={navbutton[4].link}
-          >
-            {navbutton[4].name}
-          </Link>
-           <Link
             className=" font-[Montserrat] px-2 text-sm lg:text-base"
             to={navbutton[5].link}
           >
@@ -149,19 +185,133 @@ export const Navbar = ({ navcolor }: any) => {
             isOpen ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
           }`}
         >
-          {navbutton.map((item, i) => (
-            <NavLink
-              key={i}
-              to={item.link}
-              className={`text-white text-xl  hover:text-gray-400 font-[Montserrat] transition-all duration-300 transform hover:scale-110 ${
-                isOpen ? "animate-fadeInUp" : ""
-              }`}
-              style={{ animationDelay: `${i * 50}ms` }}
-              onClick={() => setIsOpen(false)}
+          <Link
+            to={navbutton[0].link}
+            className={`text-white text-xl  hover:text-gray-400 font-[Montserrat] transition-all duration-300 transform hover:scale-110 ${
+              isOpen ? "" : ""
+            }`}
+            style={{ animationDelay: `${1 * 50}ms` }}
+            onClick={() => setIsOpen(false)}
+          >
+            {navbutton[0].name}
+          </Link>
+          <Link
+            to={navbutton[1].link}
+            className={`text-white text-xl  hover:text-gray-400 font-[Montserrat] transition-all duration-300 transform hover:scale-110 ${
+              isOpen ? "" : ""
+            }`}
+            style={{ animationDelay: `${1 * 50}ms` }}
+            onClick={() => setIsOpen(false)}
+          >
+            {navbutton[1].name}
+          </Link>
+          <div className="relative">
+            {/* Dropdown Button */}
+            <button
+              onClick={() => setIsOpen2(!isOpen2)}
+              className="font-[Montserrat] flex "
             >
-              {item.name}
-            </NavLink>
-          ))}
+              <span
+                className={`text-white text-xl  hover:text-gray-400 font-[Montserrat] transition-all duration-300 transform hover:scale-110 ${
+                  isOpen ? "" : ""
+                }`}
+              >
+                Portfolio{" "}
+              </span>
+              <X
+                className={`w-5 h-5 text-white transition-transform duration-300 mt-[6px] ml-1  ${
+                  isOpen2 ? "rotate-0" : "rotate-45"
+                }`}
+              />
+            </button>
+            <div
+              className={`absolute text-white top-full left-0 mt-1 bg-white shadow-xl w-[150px] overflow-hidden transition-all duration-300 origin-top ${
+                isOpen2
+                  ? "opacity-100 visible scale-y-100"
+                  : "opacity-0 invisible scale-y-95"
+              }`}
+            >
+              {options.map((option, index) => (
+                <Link
+                  key={index}
+                  to={`/${option}`}
+                  onClick={() => setIsOpen2(false)}
+                  className="block px-4 py-2 z-11 relative hover:bg-gray-100 text-black active:bg-gray-200 cursor-pointer transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                >
+                  {option}
+                </Link>
+              ))}
+            </div>
+
+            {isOpen2 && (
+              <div
+                onClick={() => setIsOpen2(false)}
+                className="fixed inset-0 -z-10"
+              />
+            )}
+          </div>
+           <Link
+            to={navbutton[3].link}
+            className={`text-white text-xl  hover:text-gray-400 font-[Montserrat] transition-all duration-300 transform hover:scale-110 ${
+              isOpen ? "" : ""
+            }`}
+            style={{ animationDelay: `${1 * 50}ms` }}
+            onClick={() => setIsOpen(false)}
+          >
+            {navbutton[3].name}
+          </Link>
+           <div className="relative">
+            {/* Dropdown Button */}
+            <button
+              onClick={() => setIsOpen3(!isOpen3)}
+              className="font-[Montserrat] flex "
+            >
+              <span  className={`text-white text-xl  hover:text-gray-400 font-[Montserrat] transition-all duration-300 transform hover:scale-110 ${
+              isOpen ? "" : ""
+            }`} 
+              >Info </span>
+              <X
+                className={`w-5 text-white h-5 transition-transform duration-300 mt-[6px] ml-1  ${
+                  isOpen3 ? "rotate-0" : "rotate-45"
+                }`}
+              />
+            </button>
+            <div
+              className={`absolute z-20 text-black top-full left-0 mt-1 bg-white shadow-xl w-[150px] overflow-hidden transition-all duration-300 origin-top ${
+                isOpen3
+                  ? "opacity-100 visible scale-y-100"
+                  : "opacity-0 invisible scale-y-95"
+              }`}
+            >
+              {options2.map((option, index) => (
+                <Link
+                  key={index}
+                  to={`/${option}`}
+                  onClick={() => setIsOpen2(false)}
+                  className="block z-10 relative px-4 py-2 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                >
+                  {option}
+                </Link>
+              ))}
+            </div>
+
+            {isOpen3 && (
+              <div
+                onClick={() => setIsOpen2(false)}
+                className="fixed inset-0 -z-10"
+              />
+            )}
+          </div>
+            <Link
+            to={navbutton[5].link}
+            className={`text-white text-xl  hover:text-gray-400 font-[Montserrat] transition-all duration-300  ${
+              isOpen ? "" : ""
+            }`}
+            style={{ animationDelay: `${1 * 50}ms` }}
+            onClick={() => setIsOpen(false)}
+          >
+            {navbutton[5].name}
+          </Link>
         </div>
       </div>
 

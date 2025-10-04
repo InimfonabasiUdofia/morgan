@@ -8,8 +8,8 @@ export const About = () => {
   return (
     <>
       <Navbar navcolor={navcolor}></Navbar>
-      <div className="px-5 lg:px-30 mt-22">
-        <div className="bg-[#F7F7F2] w-full h-[350px]"></div>
+      <div className="px-5 lg:px-30 lg:mt-22 mt-18">
+        <div className="bg-[#F7F7F2] w-full h-[300px] lg:h-[350px]"></div>
       </div>
       <section className="">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center ">

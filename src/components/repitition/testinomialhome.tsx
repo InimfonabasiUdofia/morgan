@@ -21,9 +21,9 @@ const Testinomialhome: React.FC<TestimonialHomeProps> = ({ img }) => {
         </div>
       </section>
       <section>
-        <div className="lg:flex relative justify-between bottom-40 lg:px-35 px-5">
+        <div className="lg:flex relative justify-between bottom-50 lg:bottom-40 lg:px-35 px-5">
           <div className="">
-            <p className="mb-6 text-white lg:w-3/5 font-[Montserrat] font-extralight">
+            <p className="mb-3 text-white lg:w-3/5 font-[Montserrat] font-extralight">
             I LOOK FORWARD TO HEARING FROM YOU AND HELPING YOU CREATE MEMORIES THAT WILL LAST A LIFETIME.
             </p>
           </div>

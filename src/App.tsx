@@ -11,6 +11,7 @@ import Contact from "./pages/contact/contact";
 import Testinomial from "./pages/testinomial/testionial";
 import Service from "./pages/service/service";
 import Potfolio1 from "./pages/gallary/potfolio1";
+import Potfolio2 from "./pages/gallary/potfolio2";
 
 
 
@@ -42,9 +43,14 @@ function App() {
       element: <><Service></Service></>,
     },
        {
-      path: "/potfolio1",
+      path: "/gallary1",
       element: <><Potfolio1></Potfolio1></>,
+    },
+    {
+      path:'/gallary2',
+      element:<><Potfolio2></Potfolio2> </>
     }
+    
   
   ]);
   return(

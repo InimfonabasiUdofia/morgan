@@ -17,7 +17,7 @@ export const Navbar = ({ navcolor }: any) => {
  
   const options = ["Gallary1", "Gallary2", "Gallary3"];
 
-  const handleSelect = (option:string) => {
+  const handleSelect = (_option:string) => {
     setIsOpen(false);
   };
 

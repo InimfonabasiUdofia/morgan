@@ -2,6 +2,7 @@
 import { Footer } from '../../components/footer/footer';
 import Navbar from '../../components/nav/navbar';
 import Gallary from '../../components/repitition/gallary'
+import Top from '../../components/repitition/top';
  type items={
     image:string;
     height:string;
@@ -57,17 +58,8 @@ const Potfolio1 = () => {
   return (
     <>
     <Navbar></Navbar>
-    <section className=" lg:px-20 px-4  mt-20">
-      <div className=" bg-[#f9f9f5] h-[320px]">
-        {/* Heading */}
-        <h2 className="text-center pt-20 text-2xl tracking-widest font-light text-black mb-12">
-          ENGAGEMENTS
-        </h2>
-
-        {/* Image grid */}
-       
-      </div>
-    </section>
+  
+    <Top top="ENGAGEMENTS"></Top>
        <div className="-mt-25">
         <Gallary selected={selected} buttonview="Book a seasion" link="./"></Gallary>
        </div>

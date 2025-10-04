@@ -1,49 +1,111 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
+import { X } from "lucide-react";
 
 export const Navbar = ({ navcolor }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const navbutton = [
-    { name: "Home", link: "./home" },
-    { name: "About", link: "./about" },
-    { name: "Services", link: "./services" },
-    { name: "Portfolio", link: "./portfolio" },
-    { name: "Blog", link: "./blog" },
-    { name: "Contact", link: "./contact" },
+    { name: "Home", link: "/" },
+    { name: "About", link: "/about" },
+    { name: "Portfolio", link: "/portfolio" },
+    { name: "Services", link: "/services" },
+
+    { name: "Blog", link: "/blog" },
+    { name: "Contact", link: "/contact" },
   ];
+  const [isOpen2, setIsOpen2] = useState(false);
+ 
+  const options = ["Gallary1", "Gallary2", "Gallary3"];
+
+  const handleSelect = (option:string) => {
+    setIsOpen(false);
+  };
 
   return (
     <>
       <nav
-        className={`absolute top-0 w-full flex justify-between items-center px-6 py-4 z-50 ${navcolor}`}
+        className={`absolute top-0 w-full flex justify-between items-center px-2 lg:px-30 py-5 z-50  ${navcolor}`}
       >
         {/* Left Links - Desktop */}
         <div className="hidden md:flex space-x-6 lg:space-x-8">
-          {navbutton.slice(0, 3).map((item, i) => (
-            <a
-              key={i}
-              href={item.link}
-              className="px-2 hover:text-gray-400 transition-colors duration-300 text-sm lg:text-base"
+          <Link
+            className="font-[Montserrat] px-2  text-sm lg:text-base"
+            to={navbutton[0].link}
+          >
+            {navbutton[0].name}
+          </Link>
+          <Link
+            className=" font-[Montserrat] px-2 text-sm lg:text-base"
+            to={navbutton[1].link}
+          >
+            {navbutton[1].name}
+          </Link>
+        
+          <div className="relative">
+            {/* Dropdown Button */}
+            <button
+              onClick={() => setIsOpen2(!isOpen2)}
+              className="font-[Montserrat] flex "
             >
-              {item.name}
-            </a>
-          ))}
+              <span className="font-medium">Portfolio </span>
+              <X
+                className={`w-3 h-3 transition-transform duration-300 mt-[6px] ml-1  ${
+                  isOpen2 ? "rotate-0" : "rotate-45"
+                }`}
+              />
+            </button>
+            <div
+              className={`absolute text-black top-full left-0 mt-1 bg-white shadow-xl w-[150px] overflow-hidden transition-all duration-300 origin-top ${
+                isOpen2
+                  ? "opacity-100 visible scale-y-100"
+                  : "opacity-0 invisible scale-y-95"
+              }`}
+            >
+              {options.map((option, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleSelect(option)}
+                  className="px-4 py-2 hover:bg-gray-100 active:bg-gray-200 cursor-pointer transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                >
+                  {option}
+                </div>
+              ))}
+            </div>
+
+            {isOpen2 && (
+              <div
+                onClick={() => setIsOpen2(false)}
+                className="fixed inset-0 -z-10"
+              />
+            )}
+          </div>
         </div>
-          <div className="lg:hidden"></div>
+        <div className="lg:hidden"></div>
+        
         {/* Logo */}
-        <div className="font-bold text-xl lg:text-2xl ">MORGAN</div>
+        <div className={`font-[Montserrat] text-xl lg:text-2xl ${isOpen &&"text-white"} `}>MORGAN</div>
 
         {/* Right Links - Desktop */}
         <div className="hidden md:flex space-x-6 lg:space-x-8">
-          {navbutton.slice(3).map((item, i) => (
-            <a
-              key={i}
-              href={item.link}
-              className="px-2 hover:text-gray-400 transition-colors duration-300 text-sm lg:text-base"
-            >
-              {item.name}
-            </a>
-          ))}
+         
+            <Link
+            className="font-[Montserrat] px-2  text-sm lg:text-base"
+            to={navbutton[3].link}
+          >
+            {navbutton[3].name}
+          </Link>
+          <Link
+            className=" font-[Montserrat] px-2 text-sm lg:text-base"
+            to={navbutton[4].link}
+          >
+            {navbutton[4].name}
+          </Link>
+           <Link
+            className=" font-[Montserrat] px-2 text-sm lg:text-base"
+            to={navbutton[5].link}
+          >
+            {navbutton[5].name}
+          </Link>
         </div>
 
         {/* Animated Mobile Menu Button */}
@@ -56,7 +118,7 @@ export const Navbar = ({ navcolor }: any) => {
             <div className="w-6 h-6 relative flex flex-col items-center justify-center">
               <span
                 className={`absolute w-full h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
-                  isOpen ? "rotate-45" : "-translate-y-2"
+                  isOpen ? "rotate-45 text-white" : "-translate-y-2"
                 }`}
               ></span>
               <span
@@ -66,7 +128,7 @@ export const Navbar = ({ navcolor }: any) => {
               ></span>
               <span
                 className={`absolute w-full h-0.5 bg-current transform transition-all duration-300 ease-in-out ${
-                  isOpen ? "-rotate-45" : "translate-y-2"
+                  isOpen ? "-rotate-45 text-white" : "translate-y-2"
                 }`}
               ></span>
             </div>
@@ -91,7 +153,7 @@ export const Navbar = ({ navcolor }: any) => {
             <a
               key={i}
               href={item.link}
-              className={`text-white text-3xl font-light hover:text-gray-400 transition-all duration-300 transform hover:scale-110 ${
+              className={`text-white text-xl  hover:text-gray-400 font-[Montserrat] transition-all duration-300 transform hover:scale-110 ${
                 isOpen ? "animate-fadeInUp" : ""
               }`}
               style={{ animationDelay: `${i * 50}ms` }}

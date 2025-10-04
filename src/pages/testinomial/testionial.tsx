@@ -67,18 +67,18 @@ const Testinomial = () => {
     <>
        <Navbar navcolor={navcolor}></Navbar>
         <Testioniamlblog content={content[0]}></Testioniamlblog>
-        <section className=" py-16 px-5">
+        <section className=" py-16 lg:px-30 px-5">
       {/* Top row (3 columns) */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6 py-10 bg-[#f9f9f4]">
+      <div className="  grid grid-cols-1 md:grid-cols-3 gap-10 px-6 lg:px-15 py-10 lg:py-20 bg-[#f9f9f4]">
         {testimonials.slice(0, 3).map((item) => (
           <div key={item.id} className=" ">
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-gray-400 text-[17px] mb-4 font-[Montserrat]">
               {item.id.toString().padStart(2, "0")}
             </p>
-            <p className="text-gray-700 text-sm leading-relaxed mb-6">
+            <p className="text-gray-700 text-sm leading-relaxed mb-6 font-[lora]">
               “{item.text}”
             </p>
-            <p className="font-semibold tracking-wide text-gray-800">
+           <p className=" text-gray-900 text-xl font-[Montserrat] pt-3">
               {item.author}
             </p>
           </div>
@@ -92,7 +92,7 @@ const Testinomial = () => {
            {item.img && (
           <div className="">
                <span className="">
-            <p className="text-gray-400 text-sm relative lg:top-20 ">{item.id}</p>
+            <p className="text-gray-400 text-[17px]  font-[Montserrat] relative lg:top-20 ">0{item.id}</p>
           </span>
           <span className="justify-center flex lg:mx-20">
             <img
@@ -106,10 +106,10 @@ const Testinomial = () => {
         )}
         <div>
         
-          <p className="text-gray-700 text-sm leading-relaxed mb-6">
+           <p className="text-gray-700 text-sm leading-relaxed mb-6 font-[lora] pt-5">
             “{item.text}”
           </p>
-          <p className="font-semibold tracking-wide text-gray-800">
+           <p className=" text-gray-900 text-xl font-[Montserrat] pt-3">
             {item.author}
           </p>
         </div>

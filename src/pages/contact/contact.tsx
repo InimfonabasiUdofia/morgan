@@ -26,12 +26,16 @@ const Contact: React.FC = () => {
       <Navbar navcolor={navcolor}></Navbar>
       <section className="bg-white">
         {/* Top text */}
-        <div className="relative lg:h-[600px] h-[500px] bg-[url('https://picsum.photos/id/1018/1920/1080')] bg-cover bg-center flex flex-col items-center justify-center text-center px-4">
-          <p className="text-xs tracking-widest uppercase text-gray-200">
+        <div className="relative lg:h-[600px] h-[500px]   bg-[url('https://picsum.photos/id/1018/1920/1080')] bg-cover bg-center flex flex-col items-center justify-center text-center px-4">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/10"></div>
+
+          <p className="text-xs tracking-widest uppercase text-white  font-[Montserrat]">
             Let’s begin your story together
           </p>
-          <h2 className="text-4xl font-light text-white mt-2">Contact Me</h2>
-          <p className="mt-3 text-gray-200 max-w-xl text-sm">
+          <h1 className="text-4xl font-light text-white mt-2 font-[Montserrat]">
+            Contact Me
+          </h1>
+          <p className="mt-3 text-white max-w-xl text-sm font-[lora]">
             I can’t wait to hear your story and capture your special day. Leave
             me a message in the form below, and let’s create something amazing
             together.
@@ -88,10 +92,7 @@ const Contact: React.FC = () => {
               />
             </div>
 
-            <button
-              type="submit"
-              className="bg-black text-white px-6 py-3 rounded-md shadow-md hover:bg-gray-800 transition"
-            >
+            <button className="px-6 py-3 bg-[#363636] text-white  font-[Montserrat] font-sm shadow-md cursor-pointer">
               Send Message
             </button>
           </form>

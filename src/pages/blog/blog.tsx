@@ -69,7 +69,7 @@ const Blog = () => {
       <section className="w-full px-6 lg:px-30 py-10">
         {/* Category Filter */}
         <div className="flex justify-between items-center mb-10">
-          <div className="flex space-x-6 text-sm uppercase">
+          <div className="flex space-x-6 text-[17px] font-[Montserrat] uppercase">
             {["All", "Couples", "Tips", "Weddings"].map((cat) => (
               <button
                 key={cat}
@@ -113,7 +113,7 @@ const Blog = () => {
             >
               {index % 2 === 0 ? (
                 <>
-                  <div>
+                  <div className="order-2 lg:order-1 py-5">
                     <img
                       src={post.image}
                       alt={post.title}
@@ -123,24 +123,24 @@ const Blog = () => {
 
                   {/* Text */}
 
-                  <div className={`text-center `}>
-                    <p className="text-sm text-gray-500 mb-2">{post.date}</p>
-                    <h2 className="text-2xl font-light mb-2">{post.title}</h2>
-                    <p className="text-gray-700 font-semibold">
+                  <div className={`text-center lg:px-20 order-1 lg:order-2`}>
+                    <p className="text-sm text-gray-500 mb-2 font-[lora]">{post.date}</p>
+                    <h2 className="text-2xl font-light mb-2 font-[Montserrat] ">{post.title}</h2>
+                    <p className="text-gray-700 font-semibold font-[lora]">
                       {post.category}
                     </p>
                   </div>
                 </>
               ) : (
                 <>
-                  <div className={`text-center `}>
-                    <p className="text-sm text-gray-500 mb-2">{post.date}</p>
-                    <h2 className="text-2xl font-light mb-2">{post.title}</h2>
+                  <div className={`text-center lg:px-20`}>
+                    <p className="text-sm text-gray-500 mb-2 font-[lora]">{post.date}</p>
+                    <h2 className="text-2xl font-light mb-2 font-[Montserrat]">{post.title}</h2>
                     <p className="text-gray-700 font-semibold">
                       {post.category}
                     </p>
                   </div>
-                  <div>
+                  <div className="py-5">
                     <img
                       src={post.image}
                       alt={post.title}
